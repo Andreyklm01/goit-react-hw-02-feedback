@@ -1,0 +1,22 @@
+.container {
+  border: 2px solid rgb(73, 73, 219);
+  padding: 10px;
+  border-radius: 5px;
+}
+.text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.total {
+  composes: text;
+  text-align: center;
+  color: rgb(122, 21, 21);
+}
+
+.percentage {
+  composes: total;
+  color: rgb(3, 82, 3);
+}

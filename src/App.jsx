@@ -1,8 +1,7 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
 import FeedbackOptions from './components/Feedback/FeedbackButton';
 import options from './components/Options/options';
-import Statistic from './components/Ststistic/Statistic';
+import Statistic from './components/Statistic/Statistic';
 import Section from './components/Section/Section';
 
 class App extends Component {
@@ -26,15 +25,16 @@ class App extends Component {
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
-    return total ? Math.round((good / total) * 100) : 0;
+    return Math.round((good / total) * 100);
   };
 
   render() {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const percentage = this.countPositiveFeedbackPercentage();
+
     return (
-      <>
+      <div className="container">
         <Section title="EXPRESSO STATISTICS" />
         <Section title="Please Leave Feedback">
           <FeedbackOptions
@@ -53,7 +53,7 @@ class App extends Component {
             percentage={percentage}
           />
         </Section>
-      </>
+      </div>
     );
   }
 }
